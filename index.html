@@ -180,7 +180,7 @@ body{font-family:var(--fb);background:var(--navy);color:var(--white);overflow-x:
 .ostepdesc{font-size:12px;line-height:1.6;color:var(--grey-text)}
 .osteptl{margin-top:8px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 
-/* ═══════════════════════ CATALOGUE SUBNAV ═══════════════════════ */
+/* ═══════════════════════ Products SUBNAV ═══════════════════════ */
 .csubnav{background:var(--navy-mid);border-bottom:1px solid rgba(201,168,76,.12);display:flex;padding:0 64px;position:sticky;top:64px;z-index:500;overflow-x:auto}
 .csnbtn{background:transparent;border:none;border-bottom:2px solid transparent;color:var(--grey-mid);font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:16px 20px;cursor:pointer;white-space:nowrap;transition:all var(--t)}
 .csnbtn:hover{color:var(--gold)}
@@ -195,10 +195,10 @@ body{font-family:var(--fb);background:var(--navy);color:var(--white);overflow-x:
 
 
 /* ═══════════════════════ PRODUCT IMAGE CARDS ═══════════════════════ */
-.prodgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:40px}
+.prodgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
 .prodcard{background:var(--white);border:1px solid var(--grey-light);transition:all var(--t);display:flex;flex-direction:column}
 .prodcard:hover{border-color:var(--gold);box-shadow:0 4px 24px rgba(201,168,76,.1)}
-.prodcard-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.prodcard-img{width:100%;height:200px;object-fit:contain;background:#f5f5f5;display:block}
 .prodcard-body{padding:16px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
 .prodcard-name{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
 .prodcard-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;cursor:pointer;transition:all var(--t);text-align:center}
@@ -206,13 +206,13 @@ body{font-family:var(--fb);background:var(--navy);color:var(--white);overflow-x:
 .viewcat-line{text-align:center;padding:8px 0 32px;font-size:13px;color:var(--grey-text)}
 .viewcat-line a{color:var(--gold);font-weight:600;text-decoration:none;letter-spacing:.06em}
 .viewcat-line a:hover{text-decoration:underline}
-@media (max-width: 1024px) {
+@media (max-width: 50px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 50px) {
   .product-grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -334,22 +334,32 @@ select.finput option:hover{
   .eq-pill{border-right:none;border-bottom:1px solid rgba(201,168,76,.08)}
   .eq-pill:last-child{border-bottom:none}
 }
+#bottles-view h3,
+#mugs-sippers-view h3,
+#bags-view h3,
+#gift-sets-view h3,
+#notebooks-view h3,
+#electronics-view h3,
+#mobile-stands-view h3,
+#kitchen-view h3 {
+  color: #0a1628 !important;
+}
 </style>
 </head>
 <body>
 
 <!-- ══════════════════════════════════════
-     NAV  — Overview · Catalogue · Contact Us
+     NAV  — Overview · Products · Contact Us
 ══════════════════════════════════════ -->
 <nav class="nav">
   <span class="nav-logo" onclick="gv('home')">Printing <span>Point</span></span>
   <ul class="nav-links">
     <li><button class="nbtn active" id="nb-overview"  onclick="gv('home')">Overview</button></li>
-    <li><button class="nbtn"        id="nb-catalogue" onclick="gv('catalogue')">Catalogue</button></li>
+    <li><button class="nbtn"        id="nb-Products" onclick="gv('Products')">Products</button></li>
     <li><button class="nbtn"        id="nb-contact"   onclick="openEQ()">Contact Us</button></li>
   </ul>
   <div class="nav-actions">
-    <button class="btn-o" onclick="window.print()">⬇ Download PDF</button>
+    <a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">⬇ Download PDF</button></a>
     <a href="https://wa.me/919810472144" class="btn-p" target="_self">💬 WhatsApp Inquiry</a>
   </div>
 </nav>
@@ -373,7 +383,7 @@ select.finput option:hover{
         <div class="si"><div class="snum">5–7</div><div class="slbl">Day Delivery</div></div>
       </div>
       <div class="cactions">
-        <button class="btn-p" onclick="gv('catalogue')">Browse Catalogue →</button>
+        <button class="btn-p" onclick="gv('Products')">Browse Products →</button>
         <button class="btn-o" onclick="openEQ()">Request a Quote</button>
       </div>
     </div>
@@ -383,7 +393,7 @@ select.finput option:hover{
         <div class="cbtxt">Corporate</div>
         <div class="cbsub">Bulk Orders Only</div>
       </div>
-      <div class="cbsub" style="margin-top:8px;color:rgba(255,255,255,.22);font-size:10px;letter-spacing:.1em;">SPECIAL PRICING FOR ORDERS ABOVE 100 UNITS</div>
+      <div class="cbsub" style="margin-top:8px;color:rgba(255, 255, 255, 0.43);font-size:10px;letter-spacing:.1em;">SPECIAL PRICING FOR ORDERS ABOVE 1000 UNITS</div>
       <div class="cyrbadge">26</div>
     </div>
   </section>
@@ -429,7 +439,7 @@ select.finput option:hover{
       <div class="wbanner">
         <div>
           <div class="wbtxt">Perfect for onboarding kits, corporate events, festive gifting &amp; client appreciation.</div>
-          <div class="wbsub">Special pricing for orders above 100 units — Contact us for a custom quote</div>
+          <div class="wbsub">SPECIAL PRICING FOR ORDERS ABOVE 1000 UNITS — Contact us for a custom quote</div>
         </div>
         <!-- GET PRICING → opens enquiry modal -->
         <button class="btn-o" style="border-color:var(--navy);color:var(--navy);flex-shrink:0;" onclick="openEQ()">Get Pricing →</button>
@@ -445,12 +455,12 @@ select.finput option:hover{
       <h2 class="ptitle">Capability <strong>Overview</strong></h2>
       <div class="pdiv"></div>
       <div class="tgrid">
-        <div class="titem" onclick="gv('catalogue','corporate')">
+        <div class="titem" onclick="gv('Products','corporate')">
           <div class="tico">🎁</div>
           <div class="tinfo"><div class="tlbl">Products</div><div class="tname">Corporate Products</div><div class="tcnt">Bottles · Mugs · Bags · Gift Sets · Notebooks · Electronics · More</div></div>
           <div class="tarr">→</div>
         </div>
-        <div class="titem" onclick="gv('catalogue','printing')">
+        <div class="titem" onclick="gv('Products','printing')">
           <div class="tico">🖨️</div>
           <div class="tinfo"><div class="tlbl">Services</div><div class="tname">Printing Services</div><div class="tcnt">Visiting Cards · Letterheads · Envelopes · ID Cards · Stickers · More</div></div>
           <div class="tarr">→</div>
@@ -470,9 +480,9 @@ select.finput option:hover{
 
 
 <!-- ══════════════════════════════════════
-     CATALOGUE VIEW
+     Products VIEW
 ══════════════════════════════════════ -->
-<div id="view-catalogue" class="view">
+<div id="view-Products" class="view">
 
   <div class="csubnav" style="margin-top:64px;">
     <button class="csnbtn active" id="csn-corporate" onclick="gc('corporate')">Corporate Products</button>
@@ -480,38 +490,294 @@ select.finput option:hover{
     <button class="csnbtn" id="csn-bottles" onclick="gc('bottles')" style="display:none;">Bottles &amp; Flasks</button>
   </div>
 
-  <!-- CORPORATE PRODUCTS -->
-  <div id="cs-corporate" class="csec active">
-    <div class="page light">
-      <div class="pi">
-        <div class="eyebrow">Products</div>
-        <h2 class="ptitle">Corporate <strong>Products</strong></h2>
-        <div class="pdiv"></div>
-        <p style="font-size:14px;color:var(--grey-text);max-width:640px;margin-bottom:40px;line-height:1.8;">Premium branded corporate merchandise for bulk orders. All products available with custom branding — screen print, laser engraving, UV print, embroidery, and foil stamping.</p>
-        <div class="bmgrid">
-          <div class="bm" style="cursor:pointer;" onclick="openBottlesView()"><div class="bmico">🍶</div><div class="bmname">Bottles &amp; Flasks</div><div class="bmdesc">Stainless steel, copper, borosilicate glass, and plastic bottles. Vacuum-insulated flasks for hot and cold beverages. Ideal for employee kits and event giveaways.</div><div class="bmbest">Branding: Laser Engraving · Screen Print · UV Print</div></div>
-          <div class="bm"><div class="bmico">☕</div><div class="bmname">Mugs &amp; Sippers</div><div class="bmdesc">Ceramic mugs, travel sippers, and double-wall insulated cups. Available in multiple sizes with full-colour or single-colour logo application.</div><div class="bmbest">Branding: Screen Print · UV Print · Laser Engraving</div></div>
-          <div class="bm"><div class="bmico">👜</div><div class="bmname">Bags</div><div class="bmdesc">Laptop bags, tote bags, backpacks, conference bags, and drawstring pouches. Fabric and leather options available for corporate branding.</div><div class="bmbest">Branding: Embroidery · Screen Print · UV Print</div></div>
-          <div class="bm"><div class="bmico">🎁</div><div class="bmname">Gift Sets</div><div class="bmdesc">Curated corporate gift hampers and combo sets. Onboarding kits, festive gifting, and client appreciation packages with custom packaging.</div><div class="bmbest">Branding: Mixed Techniques · Custom Packaging</div></div>
-          <div class="bm"><div class="bmico">📓</div><div class="bmname">Notebooks &amp; Pens</div><div class="bmdesc">Hardbound diaries, spiral notebooks, premium ballpoint and gel pens, pen sets, and desk accessories. Perfect for corporate stationery gifting.</div><div class="bmbest">Branding: Foil Stamping · Laser Engraving · Debossing</div></div>
-          <div class="bm"><div class="bmico">💻</div><div class="bmname">Electronics</div><div class="bmdesc">Power banks, wireless chargers, USB hubs, earphones, Bluetooth speakers, and smart accessories. High-utility tech gifts with premium branding.</div><div class="bmbest">Branding: Laser Engraving · UV Print · Screen Print</div></div>
-          <div class="bm"><div class="bmico">📱</div><div class="bmname">Mobile Stands &amp; Keychains</div><div class="bmdesc">Foldable mobile stands, pop sockets, metal and acrylic keychains, and multi-tool keyrings. Compact, practical branded merchandise.</div><div class="bmbest">Branding: Laser Engraving · UV Print · Foil Stamping</div></div>
-          <div class="bm"><div class="bmico">🏠</div><div class="bmname">Kitchen / Home Appliances</div><div class="bmdesc">Branded kitchen utilities, coasters, trays, lunch boxes, and home essentials. Ideal for festive corporate gifting and employee appreciation.</div><div class="bmbest">Branding: Screen Print · Laser Engraving · UV Print</div></div>
+  <!-- ============================================================
+     CORPORATE PRODUCTS — COMPLETE SECTION
+     Replace your entire corporate products section with this code.
+     Also add the JavaScript at the bottom to your JS file.
+     ============================================================ -->
+
+<!-- CORPORATE PRODUCTS -->
+<div id="cs-corporate" class="csec active">
+  <div class="page light">
+    <div class="pi">
+      <div class="eyebrow">Products</div>
+      <h2 class="ptitle">Corporate <strong>Products</strong></h2>
+      <div class="pdiv"></div>
+      <p style="font-size:14px;color:var(--grey-text);max-width:640px;margin-bottom:40px;line-height:1.8;">
+        Premium branded corporate merchandise for bulk orders. All products available with custom branding — screen print, laser engraving, UV print, embroidery, and foil stamping.
+      </p>
+
+      <!-- ===================== CATEGORIES GRID ===================== -->
+      <div class="bmgrid" id="corporate-categories" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+
+        <div class="bm" style="cursor:pointer;" onclick="openBottlesView()">
+          <div class="bmico">🍶</div>
+          <div class="bmname">Bottles &amp; Flasks</div>
+          <div class="bmdesc">Stainless steel, copper, borosilicate glass, and plastic bottles. Vacuum-insulated flasks for hot and cold beverages.</div>
+          <div class="bmbest">Branding: Laser Engraving · Screen Print · UV Print</div>
         </div>
-        <div class="tbar">
-          <div class="tbar-item"><div class="tbar-num">100+</div><div class="tbar-lbl">Products</div></div>
-          <div class="tbar-div"></div>
-          <div class="tbar-item"><div class="tbar-num">MOQ 50</div><div class="tbar-lbl">Min. Order</div></div>
-          <div class="tbar-div"></div>
-          <div class="tbar-item"><div class="tbar-num">5–7</div><div class="tbar-lbl">Production Days</div></div>
-          <div class="tbar-div"></div>
-          <div class="tbar-item"><div class="tbar-num">100%</div><div class="tbar-lbl">QC Before Dispatch</div></div>
+
+        <div class="bm" style="cursor:pointer;" onclick="openMugsSippersView()">
+          <div class="bmico">☕</div>
+          <div class="bmname">Mugs &amp; Sippers</div>
+          <div class="bmdesc">Self-stirring mugs, ceramic printed mugs, insulated tumblers, glass sippers, and smart temperature mugs for corporate gifting.</div>
+          <div class="bmbest">Branding: Screen Print · UV Print · Laser Engraving</div>
         </div>
+
+        <div class="bm" style="cursor:pointer;" onclick="openBagsView()">
+          <div class="bmico">👜</div>
+          <div class="bmname">Bags</div>
+          <div class="bmdesc">Laptop bags, tote bags, backpacks, conference bags, and drawstring pouches. Fabric and leather options available.</div>
+          <div class="bmbest">Branding: Embroidery · Screen Print · UV Print</div>
+        </div>
+
+        <div class="bm" style="cursor:pointer;" onclick="openGiftSetsView()">
+          <div class="bmico">🎁</div>
+          <div class="bmname">Gift Sets</div>
+          <div class="bmdesc">Curated corporate gift hampers and combo sets. Onboarding kits, festive gifting, and client appreciation packages.</div>
+          <div class="bmbest">Branding: Mixed Techniques · Custom Packaging</div>
+        </div>
+
+        <div class="bm" style="cursor:pointer;" onclick="openNotebooksView()">
+          <div class="bmico">📓</div>
+          <div class="bmname">Notebooks &amp; Pens</div>
+          <div class="bmdesc">Hardbound diaries, spiral notebooks, premium ballpoint and gel pens, pen sets, and desk accessories.</div>
+          <div class="bmbest">Branding: Foil Stamping · Laser Engraving · Debossing</div>
+        </div>
+
+        <div class="bm" style="cursor:pointer;" onclick="openElectronicsView()">
+          <div class="bmico">💻</div>
+          <div class="bmname">Electronics</div>
+          <div class="bmdesc">Power banks, wireless chargers, USB hubs, earphones, Bluetooth speakers, and smart accessories.</div>
+          <div class="bmbest">Branding: Laser Engraving · UV Print · Screen Print</div>
+        </div>
+
+        <div class="bm" style="cursor:pointer;" onclick="openMobileStandsView()">
+          <div class="bmico">📱</div>
+          <div class="bmname">Mobile Stands &amp; Keychains</div>
+          <div class="bmdesc">Foldable mobile stands, pop sockets, metal and acrylic keychains, and multi-tool keyrings.</div>
+          <div class="bmbest">Branding: Laser Engraving · UV Print · Foil Stamping</div>
+        </div>
+
+        <div class="bm" style="cursor:pointer;" onclick="openKitchenView()">
+          <div class="bmico">🏠</div>
+          <div class="bmname">Kitchen / Home Appliances</div>
+          <div class="bmdesc">Branded kitchen utilities, coasters, trays, lunch boxes, and home essentials for festive gifting.</div>
+          <div class="bmbest">Branding: Screen Print · Laser Engraving · UV Print</div>
+        </div>
+
       </div>
-      <div class="pnbar" style="background:var(--off-white);"><span class="pnlabel" style="color:rgba(10,22,40,.3);">Catalogue — Corporate Products</span></div>
+      <!-- ===================== END CATEGORIES GRID ===================== -->
+
+
+ <!-- ===================== BOTTLES & FLASKS VIEW ===================== -->
+<div id="bottles-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Bottles &amp; Flasks</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="0080.png" alt="Glass Bottle"><div class="prodcard-body"><div class="prodcard-name">Glass Bottle</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0087.png" alt="Insulated Stainless Steel Sports Bottle"><div class="prodcard-body"><div class="prodcard-name">Insulated Stainless Steel Sports Bottle</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0089.jpeg" alt="Collapsible Silicone Water Bottle"><div class="prodcard-body"><div class="prodcard-name">Collapsible Silicone Water Bottle</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0093.jpeg" alt="Reminder Water Bottle"><div class="prodcard-body"><div class="prodcard-name">Reminder Water Bottle</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0083.jpeg" alt="Stainless Steel Hip Flask"><div class="prodcard-body"><div class="prodcard-name">Stainless Steel Hip Flask</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0085.png" alt="Stainless Steel Hip Flask Gift Set"><div class="prodcard-body"><div class="prodcard-name">Stainless Steel Hip Flask Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="flasks1.png" alt="Premium Hip Flask Gift Box Set"><div class="prodcard-body"><div class="prodcard-name">Premium Hip Flask Gift Box Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="flasks2.png" alt="Executive Hip Flask & Bar Tool Gift Set"><div class="prodcard-body"><div class="prodcard-name">Executive Hip Flask & Bar Tool Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+<!-- ===================== MUGS & SIPPERS VIEW ===================== -->
+<div id="mugs-sippers-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Mugs &amp; Sippers</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="0072.jpeg" alt="Self Stirring Mug"><div class="prodcard-body"><div class="prodcard-name">Self Stirring Mug</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0073.jpeg" alt="Self Stirring Mug"><div class="prodcard-body"><div class="prodcard-name">Self Stirring Mug</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0077.png" alt="Smart Temperature Mug"><div class="prodcard-body"><div class="prodcard-name">Smart Temperature Mug</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0074.png" alt="Glass Straw Sipper"><div class="prodcard-body"><div class="prodcard-name">Glass Straw Sipper</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0075.jpeg" alt="Leather Sleeve Tumbler"><div class="prodcard-body"><div class="prodcard-name">Leather Sleeve Tumbler</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0076.jpeg" alt="Steel Coffee Tumbler"><div class="prodcard-body"><div class="prodcard-name">Steel Coffee Tumbler</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0079.png" alt="Insulated Travel Coffee Mug"><div class="prodcard-body"><div class="prodcard-name">Insulated Travel Coffee Mug</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="112.jpeg" alt="Bluetooth Speaker Travel Tumbler"><div class="prodcard-body"><div class="prodcard-name">Bluetooth Speaker Travel Tumbler</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="114.jpeg" alt="Travel Tumbler"><div class="prodcard-body"><div class="prodcard-name">Travel Tumbler</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+<!-- ===================== BAGS VIEW ===================== -->
+<div id="bags-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Bags</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="bags2.png" alt="Leather Laptop Bag"><div class="prodcard-body"><div class="prodcard-name">Leather Laptop Bag</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="bag3.png" alt="Executive Briefcase"><div class="prodcard-body"><div class="prodcard-name">Executive Briefcase</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="bag4.png" alt="Felt Tote Bag"><div class="prodcard-body"><div class="prodcard-name">Felt Tote Bag</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="bag5.png" alt="Premium Backpack"><div class="prodcard-body"><div class="prodcard-name">Premium Backpack</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="bags6.jpeg" alt="Travel Trolley Bag"><div class="prodcard-body"><div class="prodcard-name">Travel Trolley Bag</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="bags1.webp" alt="Croco Messenger Bag"><div class="prodcard-body"><div class="prodcard-name">Croco Messenger Bag</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="bags7.jpeg" alt="Corporate Backpack"><div class="prodcard-body"><div class="prodcard-name">Corporate Backpack</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+<!-- ===================== GIFT SETS VIEW ===================== -->
+<div id="gift-sets-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Gift Sets</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="0062.png" alt="Bamboo Executive Gift Set"><div class="prodcard-body"><div class="prodcard-name">Bamboo Executive Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0063.png" alt="Notebook & Travel Mug Gift Set"><div class="prodcard-body"><div class="prodcard-name">Notebook & Travel Mug Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0064.png" alt="Bamboo Desk Essentials Gift Set"><div class="prodcard-body"><div class="prodcard-name">Bamboo Desk Essentials Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0065.png" alt="Tech Essentials Gift Set"><div class="prodcard-body"><div class="prodcard-name">Tech Essentials Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0069.png" alt="Premium Gift Set"><div class="prodcard-body"><div class="prodcard-name">Premium Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="0070.png" alt="Executive Corporate Gift Set"><div class="prodcard-body"><div class="prodcard-name">Executive Corporate Gift Kit</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="4596.webp" alt="Leatherette Corporate Gift Kit"><div class="prodcard-body"><div class="prodcard-name">Leatherette Corporate Gift Kit</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="4597.webp" alt="Premium Stationery & Flask Gift Set"><div class="prodcard-body"><div class="prodcard-name">Premium Stationery & Flask Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="4598.webp" alt="Royal Copper Drinkware Gift Set"><div class="prodcard-body"><div class="prodcard-name">Royal Copper Drinkware Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+<!-- ===================== NOTEBOOKS & PENS VIEW ===================== -->
+<div id="notebooks-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Notebooks &amp; Pens</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="nb1.webp" alt="Fabric Cover Journal with Strap Closure"><div class="prodcard-body"><div class="prodcard-name">Fabric Cover Journal with Strap Closure</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="nb2.jpeg" alt="Premium Leather Notebook with Magnetic Closure"><div class="prodcard-body"><div class="prodcard-name">Premium Leather Notebook with Magnetic Closure</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="nb9.jpeg" alt="Executive Pen & Keychain Gift Set"><div class="prodcard-body"><div class="prodcard-name">Executive Pen & Keychain Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="nb4.jpeg" alt="Minimalist Writing Notebook with Pen"><div class="prodcard-body"><div class="prodcard-name">Minimalist Writing Notebook with Pen</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="nb5.jpeg" alt="Leatherette Notebook Gift Set"><div class="prodcard-body"><div class="prodcard-name">Leatherette Notebook Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="nb6.jpeg" alt="Checkered Notebook Gift Set with Pen"><div class="prodcard-body"><div class="prodcard-name">Checkered Notebook Gift Set with Pen &amp; Pad Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="nb7.jpeg" alt="Executive Pen & Keychain Set"><div class="prodcard-body"><div class="prodcard-name">Executive Pen & Keychain Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="nb8.jpeg" alt="Premium Leather Keychain & Pen Gift Set"><div class="prodcard-body"><div class="prodcard-name">Premium Leather Keychain & Pen Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+<!-- ===================== ELECTRONICS VIEW ===================== -->
+<div id="electronics-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Electronics</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="sandclock.jpeg" alt="Sand Clock"><div class="prodcard-body"><div class="prodcard-name">Sand Clock</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="tangentlamp.jpeg" alt="Tangent Lamp"><div class="prodcard-body"><div class="prodcard-name">Tangent Lamp</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="plant.jpeg" alt="Digi Plant"><div class="prodcard-body"><div class="prodcard-name">Digi Plant</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="10.jpeg" alt="Aroma Diffuser"><div class="prodcard-body"><div class="prodcard-name">Aroma Diffuser</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="9.jpeg" alt="Wireless Charger"><div class="prodcard-body"><div class="prodcard-name">Wireless Charger</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="desklamps.jpeg" alt="Desk Lamp"><div class="prodcard-body"><div class="prodcard-name">Desk Lamp</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="18.jpeg" alt="Wireless Charger with Bluetooth Speaker"><div class="prodcard-body"><div class="prodcard-name">Wireless Charger with Bluetooth Speaker</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="36.jpeg" alt="Smart Gadget"><div class="prodcard-body"><div class="prodcard-name">Smart Gadget</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+<!-- ===================== MOBILE STANDS & KEYCHAINS VIEW ===================== -->
+<div id="mobile-stands-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Mobile Stands &amp; Keychains</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="mb1.webp" alt="Magnetic Phone Stand"><div class="prodcard-body"><div class="prodcard-name">Magnetic Phone Stand</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="mb2.webp" alt="Foldable Desktop Stand"><div class="prodcard-body"><div class="prodcard-name">Foldable Desktop Stand</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="kc1.webp" alt="Pen & Keychain Gift Set"><div class="prodcard-body"><div class="prodcard-name">Pen &amp; Keychain Gift Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="kc2.webp" alt="Leather Carabiner Keychain"><div class="prodcard-body"><div class="prodcard-name">Leather Carabiner Keychain</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="kc3.webp" alt="Leather Strip Keychain"><div class="prodcard-body"><div class="prodcard-name">Leather Strip Keychain</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="kc4.webp" alt="Metal Bottle Opener Keychain"><div class="prodcard-body"><div class="prodcard-name">Metal Bottle Opener Keychain</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+<!-- ===================== KITCHEN / HOME VIEW ===================== -->
+<div id="kitchen-view" style="display:none;">
+  <div style="margin-bottom:30px;">
+    <button onclick="closeAllViews()" style="background:none;border:1px solid var(--grey-text);padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--grey-text);">← Back to Categories</button>
+  </div>
+  <h3 style="margin-bottom:24px;font-size:20px;">Kitchen / Home Appliances</h3>
+  <div class="prodgrid">
+    <div class="prodcard"><img class="prodcard-img" src="22.jpeg" alt="Premium Tea Gift Set with Digital Warmer"><div class="prodcard-body"><div class="prodcard-name">Premium Tea Gift Set with Digital Warmert</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="23.jpeg" alt="Electric Travel Kettle with Bowl Set"><div class="prodcard-body"><div class="prodcard-name">Electric Travel Kettle with Bowl Set</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="hk1.webp" alt="Digital Electric Kettle (Temperature Display)y"><div class="prodcard-body"><div class="prodcard-name">DigitalBBQ Tool Set with Tongs & GlovesBranded Kitchen Apron</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="hk3.webp" alt="Digital Air Fryer"><div class="prodcard-body"><div class="prodcard-name">Custom Cutting Board</div><button class="prodcard-btn">Enquire Now</button></div></div>
+    <div class="prodcard"><img class="prodcard-img" src="hk4.webp" alt="Electric Sandwich Maker / Grill"><div class="prodcard-body"><div class="prodcard-name">Electric Sandwich Maker / Grill"</div><button class="prodcard-btn">Enquire Now</button></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;"><a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;"><button class="btn-o">📄 View Complete Range</button></a></div>
+</div>
+
+
+      <!-- Stats Bar -->
+      <div class="tbar">
+        <div class="tbar-item"><div class="tbar-num">100+</div><div class="tbar-lbl">Products</div></div>
+        <div class="tbar-div"></div>
+        <div class="tbar-item"><div class="tbar-num">MOQ 50</div><div class="tbar-lbl">Min. Order</div></div>
+        <div class="tbar-div"></div>
+        <div class="tbar-item"><div class="tbar-num">5–7</div><div class="tbar-lbl">Production Days</div></div>
+        <div class="tbar-div"></div>
+        <div class="tbar-item"><div class="tbar-num">100%</div><div class="tbar-lbl">QC Before Dispatch</div></div>
+      </div>
+
+    </div>
+    <div class="pnbar" style="background:var(--off-white);">
+      <span class="pnlabel" style="color:rgba(10,22,40,.3);">Products — Corporate Products</span>
     </div>
   </div>
+</div>
 
+
+<!-- ============================================================
+     JAVASCRIPT — Add these functions to your JS file
+     ============================================================ -->
+<script>
+// Hide all product views and show categories grid
+function closeAllViews() {
+  document.getElementById('corporate-categories').style.display = 'grid';
+  var views = [
+    'mugs-sippers-view',
+    'bags-view',
+    'gift-sets-view',
+    'notebooks-view',
+    'electronics-view',
+    'mobile-stands-view',
+    'kitchen-view'
+  ];
+  views.forEach(function(id) {
+    document.getElementById(id).style.display = 'none';
+  });
+}
+
+// Show a specific product view and hide categories
+function showView(viewId) {
+  document.getElementById('corporate-categories').style.display = 'none';
+  closeAllViews(); // hide all first
+  document.getElementById('corporate-categories').style.display = 'none';
+  document.getElementById(viewId).style.display = 'block';
+  // Scroll to top of section
+  document.getElementById('cs-corporate').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openBottlesView()     { showView('bottles-view'); }    { showView('bottles-view'); }   // Add bottles view if needed
+function openMugsSippersView() { showView('mugs-sippers-view'); }
+function openBagsView()        { showView('bags-view'); }
+function openGiftSetsView()    { showView('gift-sets-view'); }
+function openNotebooksView()   { showView('notebooks-view'); }
+function openElectronicsView() { showView('electronics-view'); }
+function openMobileStandsView(){ showView('mobile-stands-view'); }
+function openKitchenView()     { showView('kitchen-view'); }
+</script>
   <!-- PRINTING SERVICES -->
 <div id="cs-printing" class="csec">
   <div class="page light">
@@ -532,42 +798,42 @@ select.finput option:hover{
         </div>
         <div class="prodgrid">
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-001.jpg" alt="Standard Visiting Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-001.jpg" alt="Standard Visiting Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Premium Navy & Gold Corporate Visiting Card</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-002.jpg" alt="Premium Visiting Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-002.jpg" alt="Premium Visiting Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Luxury Gold Foil Business Card Design</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src=" PS-003.jpg" alt="Modern Visiting Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-003.jpg" alt="Modern Visiting Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Minimalist Executive Visiting Card</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="ps-004.png" alt="Metal Visiting Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\ps-004.png" alt="Metal Visiting Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Premium Gold Metal Business Card</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-005.png" alt="Laser Cut Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-005.png" alt="Laser Cut Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Laser Cut Designer Visiting Card</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-006.png" alt="Steel Visiting Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-006.png" alt="Steel Visiting Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Stainless Steel Corporate Business Card</div>
               <button class="prodcard-btn">Enquire Now</button>
@@ -632,63 +898,63 @@ select.finput option:hover{
         </div>
         <div class="prodgrid">
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-007.jpg" alt="Company Letterhead">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-007.jpg" alt="Company Letterhead">
             <div class="prodcard-body">
               <div class="prodcard-name">Company Letterhead</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-008.jpg" alt="Premium Letterhead">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-008.jpg" alt="Premium Letterhead">
             <div class="prodcard-body">
               <div class="prodcard-name">Premium Letterhead</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-009.jpg" alt="Letter heads">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-009.jpg" alt="Letter heads">
             <div class="prodcard-body">
               <div class="prodcard-name">Single Copy Bill Book</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-013.jpg" alt="Duplicate NCR Bill Book">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-013.jpg" alt="Duplicate NCR Bill Book">
             <div class="prodcard-body">
               <div class="prodcard-name">Duplicate NCR Bill Book</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-014.jpg" alt="Triplicate NCR Bill Book">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-014.jpg" alt="Triplicate NCR Bill Book">
             <div class="prodcard-body">
               <div class="prodcard-name">Triplicate NCR Bill Book</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-015.jpg" alt="Triplicate NCR Bill Book">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-015.jpg" alt="Triplicate NCR Bill Book">
             <div class="prodcard-body">
               <div class="prodcard-name">Triplicate NCR Bill Book</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-016.jpg" alt="Triplicate NCR Bill Book">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-016.jpg" alt="Triplicate NCR Bill Book">
             <div class="prodcard-body">
               <div class="prodcard-name">Triplicate NCR Bill Book</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-017.jpg" alt="Triplicate NCR Bill Book">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-017.jpg" alt="Triplicate NCR Bill Book">
             <div class="prodcard-body">
               <div class="prodcard-name">Triplicate NCR Bill Book</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-018.jpg" alt="Triplicate NCR Bill Book">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-018.jpg" alt="Triplicate NCR Bill Book">
             <div class="prodcard-body">
               <div class="prodcard-name">Triplicate NCR Bill Book</div>
               <button class="prodcard-btn">Enquire Now</button>
@@ -705,37 +971,16 @@ select.finput option:hover{
         </div>
         <div class="prodgrid">
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-010.jpg" alt="DL Envelope">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-010.jpg" alt="Envelope 1">
             <div class="prodcard-body">
               <div class="prodcard-name">DL Envelope</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-011.jpg" alt="C4 Envelope">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-011.jpg" alt="Envelope 2">
             <div class="prodcard-body">
               <div class="prodcard-name">C4 Envelope</div>
-              <button class="prodcard-btn">Enquire Now</button>
-            </div>
-          </div>
-          <div class="prodcard">
-            <img class="prodcard-img" src="ENV-003.jpg" alt="Window Envelope">
-            <div class="prodcard-body">
-              <div class="prodcard-name">Window Envelope</div>
-              <button class="prodcard-btn">Enquire Now</button>
-            </div>
-          </div>
-          <div class="prodcard">
-            <img class="prodcard-img" src="ENV-004.jpg" alt="Colour Printed Envelope">
-            <div class="prodcard-body">
-              <div class="prodcard-name">Colour Printed Envelope</div>
-              <button class="prodcard-btn">Enquire Now</button>
-            </div>
-          </div>
-          <div class="prodcard">
-            <img class="prodcard-img" src="ENV-005.jpg" alt="Custom Size Envelope">
-            <div class="prodcard-body">
-              <div class="prodcard-name">Custom Size Envelope</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
@@ -750,42 +995,42 @@ select.finput option:hover{
         </div>
         <div class="prodgrid">
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-032.jpg" alt="PVC ID Card Single Side">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-032.jpg" alt="PVC ID Card Single Side">
             <div class="prodcard-body">
               <div class="prodcard-name">PVC ID Card – Single Side</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-033.jpg" alt="PVC ID Card Double Side">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-033.jpg" alt="PVC ID Card Double Side">
             <div class="prodcard-body">
               <div class="prodcard-name">PVC ID Card – Double Side</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-034.jpg" alt="Paper ID Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-034.jpg" alt="Paper ID Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Paper ID Card</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-035.jpg" alt="Lanyard ID Card">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-035.jpg" alt="Lanyard ID Card">
             <div class="prodcard-body">
               <div class="prodcard-name">Lanyard ID Card</div>
               <button class="prodcard-btn">Enquire Now</button>
               </div>
           </div>
               <div class="prodcard">
-            <img class="prodcard-img" src="PS-036.jpg" alt="PVC ID Card Double Side">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-036.jpg" alt="PVC ID Card Double Side">
             <div class="prodcard-body">
               <div class="prodcard-name">PVC ID Card – Double Side</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-037.jpg" alt="PVC ID Card Double Side">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-037.jpg" alt="PVC ID Card Double Side">
             <div class="prodcard-body">
               <div class="prodcard-name">PVC ID Card – Double Side</div>
               <button class="prodcard-btn">Enquire Now</button>
@@ -802,28 +1047,28 @@ select.finput option:hover{
         </div>
         <div class="prodgrid">
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-019.jpg" alt="Patient File">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-019.jpg" alt="Patient File">
             <div class="prodcard-body">
               <div class="prodcard-name">Patient File</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-20.jpg" alt="Prescription Pad">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-20.jpg" alt="Prescription Pad">
             <div class="prodcard-body">
               <div class="prodcard-name">Prescription Pad</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-21.jpg" alt="OPD File">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-21.jpg" alt="OPD File">
             <div class="prodcard-body">
               <div class="prodcard-name">OPD File</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-22.jpg" alt="Hospital Report File">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-22.jpg" alt="Hospital Report File">
             <div class="prodcard-body">
               <div class="prodcard-name">Hospital Report File</div>
               <button class="prodcard-btn">Enquire Now</button>
@@ -840,42 +1085,42 @@ select.finput option:hover{
         </div>
         <div class="prodgrid">
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-026.jpg" alt="Die-Cut Sticker">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-026.jpg" alt="Die-Cut Sticker">
             <div class="prodcard-body">
               <div class="prodcard-name">Die-Cut Sticker</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-027.jpg" alt="Sheet Sticker">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-027.jpg" alt="Sheet Sticker">
             <div class="prodcard-body">
               <div class="prodcard-name">Sheet Sticker</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-028.jpg" alt="Product Label">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-028.jpg" alt="Product Label">
             <div class="prodcard-body">
               <div class="prodcard-name">Product Label</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-029.jpg" alt="Barcode Label">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-029.jpg" alt="Barcode Label">
             <div class="prodcard-body">
               <div class="prodcard-name">Barcode Label</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-030.jpg" alt="Waterproof Sticker">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-030.jpg" alt="Waterproof Sticker">
             <div class="prodcard-body">
               <div class="prodcard-name">Waterproof Sticker</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-031.jpg" alt="Branding Sticker">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-031.jpg" alt="Branding Sticker">
             <div class="prodcard-body">
               <div class="prodcard-name">Branding Sticker</div>
               <button class="prodcard-btn">Enquire Now</button>
@@ -891,21 +1136,21 @@ select.finput option:hover{
         </div>
         <div class="prodgrid">
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-023.jpg" alt="Woven Label">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-023.jpg" alt="Woven Label">
             <div class="prodcard-body">
               <div class="prodcard-name">Woven Label</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-024.jpg" alt="Printed Fabric Label">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-024.jpg" alt="Printed Fabric Label">
             <div class="prodcard-body">
               <div class="prodcard-name">Printed Fabric Label</div>
               <button class="prodcard-btn">Enquire Now</button>
             </div>
           </div>
           <div class="prodcard">
-            <img class="prodcard-img" src="PS-025.jpg" alt="Hang Tag">
+            <img class="prodcard-img" src="c:\Users\aashi\OneDrive\Desktop\pp\PS-025.jpg" alt="Hang Tag">
             <div class="prodcard-body">
               <div class="prodcard-name">Hang Tag</div>
               <button class="prodcard-btn">Enquire Now</button>
@@ -941,7 +1186,7 @@ select.finput option:hover{
       </div>
 
     </div>
-    <div class="pnbar" style="background:var(--off-white);"><span class="pnlabel" style="color:rgba(10,22,40,.3);">Catalogue — Printing Services</span></div>
+    <div class="pnbar" style="background:var(--off-white);"><span class="pnlabel" style="color:rgba(10,22,40,.3);">Products — Printing Services</span></div>
   </div>
 </div>
 
@@ -1000,13 +1245,15 @@ select.finput option:hover{
             </div>
           </div>
         </div>
-        <div class="viewcat-line">To view complete range, <a href="#" onclick="gc('corporate');return false;">View Catalogue</a></div>
+        <a href="Master Catalog.pdf" target="_blank" style="text-decoration:none;">
+  <button>View Catalog</button>
+</a>
       </div>
       <div class="pnbar" style="background:var(--off-white);"><span class="pnlabel" style="color:rgba(10,22,40,.3);">Bottles &amp; Flasks</span></div>
     </div>
   </div>
 
-</div><!-- /view-catalogue -->
+</div><!-- /view-Products -->
 
 
 <!-- ══════════════════════════════════════
@@ -1147,9 +1394,9 @@ select.finput option:hover{
 /* ── Bottles sub-view ── */
 function openBottlesView(){
   document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
-  document.getElementById('view-catalogue').classList.add('active');
+  document.getElementById('view-Products').classList.add('active');
   document.querySelectorAll('.nbtn').forEach(function(b){ b.classList.remove('active'); });
-  var nb = document.getElementById('nb-catalogue');
+  var nb = document.getElementById('nb-Products');
   if(nb) nb.classList.add('active');
   document.querySelectorAll('.csec').forEach(function(s){ s.classList.remove('active'); });
   document.querySelectorAll('.csnbtn').forEach(function(b){ b.classList.remove('active'); });
@@ -1173,10 +1420,10 @@ function gv(view, sub){
   var nb = document.getElementById('nb-'+view);
   if(nb) nb.classList.add('active');
   window.scrollTo(0,0);
-  if(sub && view==='catalogue') gc(sub);
+  if(sub && view==='Products') gc(sub);
 }
 
-/* ── Catalogue sub-nav ── */
+/* ── Products sub-nav ── */
 function gc(sec){
   document.querySelectorAll('.csec').forEach(function(s){ s.classList.remove('active'); });
   document.querySelectorAll('.csnbtn').forEach(function(b){ b.classList.remove('active'); });
@@ -1281,6 +1528,26 @@ function submitEQ(){
     });
 }
 </script>
-
+<script>
+function closeAllViews() {
+  document.getElementById('corporate-categories').style.display = 'grid';
+  var views = ['bottles-view','mugs-sippers-view','bags-view','gift-sets-view','notebooks-view','electronics-view','mobile-stands-view','kitchen-view'];
+  views.forEach(function(id) { document.getElementById(id).style.display = 'none'; });
+}
+function showView(viewId) {
+  closeAllViews();
+  document.getElementById('corporate-categories').style.display = 'none';
+  document.getElementById(viewId).style.display = 'block';
+  document.getElementById('cs-corporate').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function openBottlesView()     { showView('bottles-view'); }
+function openMugsSippersView() { showView('mugs-sippers-view'); }
+function openBagsView()        { showView('bags-view'); }
+function openGiftSetsView()    { showView('gift-sets-view'); }
+function openNotebooksView()   { showView('notebooks-view'); }
+function openElectronicsView() { showView('electronics-view'); }
+function openMobileStandsView(){ showView('mobile-stands-view'); }S
+function openKitchenView()     { showView('kitchen-view'); }
+</script>
 </body>
 </html>
