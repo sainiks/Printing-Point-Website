@@ -940,6 +940,20 @@ function openEQWithProduct(productName){
   openEQ();
 }
 
+// Attach enquiry behavior to all product cards that don't already define a click handler
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.prodcard-btn').forEach(function(btn){
+    if(btn.getAttribute('onclick')) return;
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.prodcard');
+      var nameEl = card ? card.querySelector('.prodcard-name') : null;
+      var productName = nameEl ? nameEl.textContent.trim() : 'Product Enquiry';
+      openEQWithProduct(productName);
+    });
+  });
+});
+
+
 /* ── View routing ── */
 function gv(view, sub){
   document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
